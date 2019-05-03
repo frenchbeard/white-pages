@@ -3,7 +3,7 @@
 {/if}
 
 {if $type eq 'mailto'}
-    {mailto address="{$value}" encode="javascript" text="{$value|truncate:{$truncate_value_after}}" extra='class="link-email" title="'|cat:$msg_tooltip_emailto:'"'}<br />
+    {mailto address="{htmlspecialchars($value)}" encode="javascript" text="{$value|truncate:{$truncate_value_after}}" extra='class="link-email" title="'|cat:$msg_tooltip_emailto:'"'}
 {/if}
 
 {if $type eq 'tel'}
